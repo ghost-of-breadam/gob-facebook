@@ -1,0 +1,41 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<link rel="import" href="./gob-facebook.html">
+<link rel="import" href="../gob-content/gob-content.html">
+
+<dom-module id="gob-facebook-comments">
+  <template>
+
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <gob-facebook></gob-facebook>
+
+    <gob-content>
+      
+      <div class="fb-comments"
+           data-href="[[page]]"
+           data-numposts="5"
+           data-width="100%">
+      </div>
+    </gob-content>
+
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'gob-facebook-comments',
+
+      properties:{
+        page:{
+          type:String,
+          value:window.location.href
+        }
+      }
+    });
+  </script>
+</dom-module>

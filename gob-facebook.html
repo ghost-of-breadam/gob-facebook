@@ -1,0 +1,45 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`gob-facebook`
+
+
+@demo demo/index.html
+-->
+
+<script>
+  Polymer({
+
+    is: 'gob-facebook',
+
+    properties:{
+
+      appId:{
+        type:String
+      },
+
+      version:{
+        type:String
+      },
+
+      language:{
+        type:String
+      },
+    },
+
+    ready:function(){
+      var src = "//connect.facebook.net/" + this.language + "/sdk.js#xfbml=1&version=" + this.version + "&appId=" + this.appId;
+
+      195598147512937;
+
+      (function(d,s,id,src){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = src;
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document,'script','facebook-jssdk',src));
+    }
+
+  });
+</script>
